@@ -1,5 +1,5 @@
 {
-  "name": "hopshopontop",
+  "name": "RustPlusShopHelper",
   "version": "1.0.0",
   "description": "undercut em all",
   "main": "main.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nerif-tafu/hopshopontop.git"
+    "url": "git+https://github.com/nerif-tafu/RustPlusShopHelper.git"
   },
   "author": "nerif-tafu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nerif-tafu/hopshopontop/issues"
+    "url": "https://github.com/nerif-tafu/RustPlusShopHelper/issues"
   },
-  "homepage": "https://github.com/nerif-tafu/hopshopontop#readme",
+  "homepage": "https://github.com/nerif-tafu/RustPlusShopHelper#readme",
   "dependencies": {
     "@liamcottle/rustplus.js": "^2.3.0",
     "axios": "^0.27.2",
@@ -55,7 +55,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "hopshopontop"
+            "name": "RustPlusShopHelper"
           }
         },
         {
