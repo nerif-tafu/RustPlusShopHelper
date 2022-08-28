@@ -1,0 +1,155 @@
+
+
+html, body {
+    margin:0px;
+    height:100%;
+  }
+  
+h1 {
+  text-align: center;
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  padding:30px;
+  border: 3px solid green;
+  width: 50%;
+  word-wrap: break-word;
+  font: bold 2em "Fira Sans", sans-serif;
+  
+}
+
+h3 {
+  font: 1.2em "Fira Sans", sans-serif;
+  background-color: rgb(240, 240, 240);
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  justify-content:center;
+  align-items:center;
+}
+
+#startContainer {
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  min-width:100%;
+}
+.titleContainer {
+  flex-grow: 4;
+
+}
+.loginContainer {
+  flex-grow: 1;
+
+}
+
+.titleHolder {
+  width:100%;
+  height:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: 50%;
+}
+
+#serverPairContainer {
+  justify-content: center;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+#shopViewContainer {
+  justify-content: center;
+  display: none;
+  flex-direction: column;
+  align-self: center;
+  height: 100vh;
+  width: 90vw;
+  margin-left: 5vw;
+}
+
+
+#ShopHolderStatus {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  max-height: 115px;
+}
+
+#statusText{
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#ShopHolderUndercuts {
+  flex: 50;
+  max-height: 100vh - 40px;
+  overflow-x:hidden;
+ 
+  flex-direction: column;
+}
+
+#ShopHolderOutOfStock{
+  flex: 50;
+  max-height: 100vh - 40px;
+  overflow-x:hidden;
+  display: none;
+  flex-direction: column;
+}
+
+#ShopHolderOptions {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+}
+
+#shopPrefixDiv {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+#reloginButton {
+  flex: 1;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#swapView {
+  flex: 1;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #4c77af;
+}
+
+#shopPrefixTxtbox {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+input{box-sizing:border-box} 
+
+
+.bold {
+  font-weight: bold;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Rust+ Undercutter</title>
+  </head>
+  <body>
+    <div id="startContainer" class="toggle-content">
+      <div class="titleContainer">
+        <div class="titleHolder">
+          <h1>RUST+ UNDERCUTTER
+        </div>
+      </div>
+      <div class="loginContainer">
+        <button id="loginSteamButton" class="button">Login to Steam</button>
+      </div>
+    </div>
+    <div id="serverPairContainer" class="toggle-content">
+      <h1>Please now pair with a Rust server in the ingame menu.</h1>
+    </div>
+    <div id="shopViewContainer" class="toggle-content">
+      <div id="ShopHolderStatus">
+        <h1 id="statusText" >You are now synced with a Rust+ server.</h1>
+      </div>
+      <div id="ShopHolderUndercuts">
+
+      </div>
+      <div id="ShopHolderOutOfStock">
+
+      </div>
+      <div id="ShopHolderOptions">
+        <div id="shopPrefixDiv">
+          <input type="text" id="shopPrefixTxtbox" name="shopPrefixTxtbox" placeholder="Shop Prefix">
+        </div>
+        <button id="swapView" class="button">View out of stock items</button>
+        <button id="reloginButton" class="button">Reconnect to Steam and new server</button>
+      </div>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
+
+
+
