@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config()
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 const itemscraper = require('./itemscraper.js')
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 let shopPrefix = ''
 let rustplus;
 let itemIDs;
@@ -142,32 +143,50 @@ function getGridFromXY(x, y){
     return (`${secondChar}${firstChar}${ygrid}`);
 }
 
-function setTeamChatAlert(){
+async function setTeamChatAlert(){
     if (!map) { return; }
     if (currentUndercuts.length === 0) { 
         rustplus.sendTeamMessage(`Currently not being undercut.`);
     } else {
+        for await (const undercutItem of currentUndercuts) {
+            title = `You are getting undercut by \"${undercutItem.enemyShop.shopName}\" @ ${getGridFromXY(undercutItem.enemyShop.xpos,undercutItem.enemyShop.ypos)}`;
+            theirratio = `${lookupItemIDName(undercutItem.enemyShop.itemId)} for ${(undercutItem.enemyShop.costPerItem / undercutItem.enemyShop.quantity).toFixed(2)} ${lookupItemIDName(undercutItem.enemyShop.currencyId)}`;
+    
+            console.log(title)
+            console.log(theirratio);
+            await delay(5000)
+            rustplus.sendTeamMessage(`${title}. ${theirratio}.`);         
+        }
+        /**
         currentUndercuts.forEach(undercutItem => {
             title = `You are getting undercut by \"${undercutItem.enemyShop.shopName}\" @ ${getGridFromXY(undercutItem.enemyShop.xpos,undercutItem.enemyShop.ypos)}`;
             theirratio = `${lookupItemIDName(undercutItem.enemyShop.itemId)} for ${(undercutItem.enemyShop.costPerItem / undercutItem.enemyShop.quantity).toFixed(2)} ${lookupItemIDName(undercutItem.enemyShop.currencyId)}`;
     
             console.log(title)
             console.log(theirratio);
-    
+            await delay(3000)
             rustplus.sendTeamMessage(`${title}. ${theirratio}.`);
         });
+        */
     }
 }
 
-function setTeamChatOutOfStock(){
+async function setTeamChatOutOfStock(){
     if (!map) { return; }
     if (currentOutOfStock.length === 0) { 
         rustplus.sendTeamMessage(`Currently nothing out of stock.`);
     } else {
         console.log(currentOutOfStock)
+        for await (const outOfStockItem of currentOutOfStock) {
+            await delay(5000)
+            rustplus.sendTeamMessage(`Your ${outOfStockItem.itemName} are out of stock in ${outOfStockItem.shopName}.`);
+        }
+        /**
         currentOutOfStock.forEach(outOfStockItem => {
+            await delay(3000)
             rustplus.sendTeamMessage(`Your ${outOfStockItem.itemName} are out of stock in ${outOfStockItem.shopName}.`);
         });
+        */
     }
 }
 
